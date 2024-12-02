@@ -1,0 +1,33 @@
+<div class="search-container" style="margin-top: -30px;">
+    <h2>Search Food Products</h2>
+    <div class="search-box">
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        placeholder="Search for products..."
+        (keyup)="fetchData()"
+        class="search-input"
+      />
+      <button class="search-button">
+        <i class="search-icon"></i>
+      </button>
+    </div>
+  </div>
+  
+  <div *ngIf="products && products.length > 0" class="product-grid">
+    <div *ngFor="let product of products" class="product-card" (click)="viewProductDetails(product.id)">
+      <img
+        [src]="product.image_url || 'https://via.placeholder.com/200'"
+        alt="{{ product.product_name || 'Unnamed Product' }}"
+        class="product-image"
+      />
+      <h3>{{ product.product_name || 'Unnamed Product' }}</h3>
+      <p>{{ product.brands || 'Brand not available' }}</p>
+    </div>
+  </div>
+  
+  
+  <div *ngIf="products && products.length === 0">
+    <p class="no-results">No results found.</p>
+  </div>
+  

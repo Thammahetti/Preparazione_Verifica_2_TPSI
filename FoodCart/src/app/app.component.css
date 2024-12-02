@@ -1,0 +1,81 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling with Gradient Background */
+  body {
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center; /* Horizontal center */
+    align-items: center; /* Vertical center */
+    color: #fff;
+    margin: 0;
+    text-align: center;
+  }
+  
+  /* Container Styling for Centered Content */
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4); /* Transparent dark background */
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    animation: fadeIn 1.2s ease-out forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 80%; /* Responsive width */
+    max-width: 500px; /* Max width to avoid very large containers */
+  }
+  
+  /* Logo Styling */
+  .logo {
+    width: 200px; /* Adjust logo size */
+    height: auto;
+    margin-bottom: 30px;
+    animation: popInLogo 1.2s ease-out forwards; /* Logo animation */
+  }
+  
+  /* Fade-in Effect for Container */
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Pop-in Effect for Logo */
+  @keyframes popInLogo {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Router Outlet Styling */
+  router-outlet {
+    font-size: 18px;
+    color: #f7f7f7;
+    margin-top: 20px;
+  }
+  
+  /* Responsive Design for Mobile Devices */
+  @media (max-width: 600px) {
+    .container {
+      padding: 15px;
+      margin: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+  
+    .logo {
+      width: 150px; /* Smaller logo for mobile */
+    }
+  }
+  

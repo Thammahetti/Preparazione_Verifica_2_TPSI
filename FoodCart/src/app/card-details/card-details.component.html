@@ -1,0 +1,22 @@
+<div *ngIf="productDetails" class="product-details">
+  <h2>{{ productDetails.product_name || 'Unnamed Product' }}</h2>
+  <img
+    [src]="productDetails.image_url || 'https://via.placeholder.com/400'"
+    alt="{{ productDetails.product_name || 'Unnamed Product' }}"
+    class="product-image"
+  />
+  
+  <p><strong>Brand:</strong> {{ productDetails.brands || 'No Brand Available' }}</p>
+  <p><strong>Common Name:</strong> {{ productDetails.common_name || 'No Common Name Available' }}</p>
+  
+  <p><strong>Categories:</strong> {{ productDetails.categories || 'No Categories Available' }}</p>
+  <p><strong>Packaging:</strong> {{ productDetails.packaging || 'No Packaging Information Available' }}</p>
+  <p><strong>Quantity:</strong> {{ productDetails.quantity || 'No Quantity Information Available' }}</p>
+
+  <p><strong>Description:</strong> {{ productDetails.description || 'No Description Available' }}</p>
+  <p><strong>Ingredients:</strong> {{ productDetails.ingredients_text || 'No Ingredients Available' }}</p>
+</div>
+
+<div *ngIf="!productDetails">
+  <p>Loading product details...</p>
+</div>
